@@ -1,0 +1,176 @@
+.container {
+  width: 100%;
+  margin: auto;
+  transition: 0.5s;
+}
+header {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+}
+header h1 {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.shopping {
+  position: relative;
+  text-align: center;
+  display: flex;
+}
+ul.drop-down-menu .shopping img {
+  width: 40px;
+  left: 50%;
+}
+ul.drop-down-menu .shopping span {
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  left: 70%;
+  padding: 0.01px 15px 0.01px;
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+  margin-top: 50px;
+}
+.list .item {
+  background-color: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0 6px 12px -7px rgba(171, 171, 171, 1);
+  box-shadow: 0 6px 12px -7px rgba(171, 171, 171, 1);
+  -webkit-transition: -webkit-box-shadow 0.4s ease-out;
+  transition: -webkit-box-shadow 0.4s ease-out;
+  -o-transition: box-shadow 0.4s ease-out;
+  transition: box-shadow 0.4s ease-out;
+  transition: box-shadow 0.4s ease-out, -webkit-box-shadow 0.4s ease-out;
+  position: relative;
+}
+.list .item:hover {
+  -webkit-box-shadow: 0 10px 12px -7px rgba(171, 171, 171, 1);
+  box-shadow: 0 10px 12px -7px rgba(171, 171, 171, 1);
+}
+.list .item img {
+  height: 114px;
+  width: 114px;
+}
+.list .item .rear-img {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  -webkit-transition: opacity 0.4s ease-out;
+  -o-transition: opacity 0.4s ease-out;
+  transition: opacity 0.4s ease-out;
+}
+.list .item:hover .rear-img {
+  opacity: 1;
+  z-index: 0;
+}
+
+.list .item .title {
+  font-weight: 600;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.list .item .price {
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.list .item button {
+  border-radius: 50%;
+  right: 0;
+  bottom: 100px; /* 向上移動的距離 */
+  position: absolute;
+  transition: 0.4s ease-in-out;
+  border: none; /* 取消按鈕邊框 */
+  padding: 0; /* 取消按鈕內邊距 */
+  cursor: pointer; /* 讓滑鼠游標變成手形 */
+}
+.list .item button:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.list .item button img {
+  width: 60px;
+  height: 60px;
+}
+.productcard {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 500px;
+
+  height: 50%;
+  transition: 0.5s;
+
+  background-color: rgba(48, 73, 118, 0.5);
+}
+
+.active .container {
+  transform: translateX(-200px);
+}
+.productcard h1 {
+  color: #fff;
+  font-weight: 80;
+  margin: 0;
+  padding: 0 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.productcard .checkOut {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.productcard .checkOut div {
+  background-color: rgba(220, 220, 220, 1);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.productcard .checkOut div:nth-child(2) {
+  background-color: #212868;
+  color: #fff;
+}
+.productcard ul {
+  display: flex;
+  flex-direction: column;
+}
+.productcard ul li {
+  display: grid;
+  grid-template-columns: 100px repeat(3, 1fr);
+  color: #fff;
+  row-gap: 10px;
+  margin-bottom: 20px;
+}
+.productcard ul div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productcard ul img {
+  width: 50%;
+}
+.productcard ul button {
+  background-color: #fff5;
+  border: none;
+}
+.productcard ul .count {
+  margin: 0 10px;
+}
